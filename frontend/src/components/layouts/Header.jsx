@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
 import logo from "./../../assets/images/logo.png";
 import menu from "./../../assets/images/menu.png";
 import { HeaderLink } from "./HeaderLink";
-import { headerItems } from '../../utils/dataArrays';
+import { headerItems } from "../../utils/dataArrays";
 import { IoMdClose } from "react-icons/io";
 
 export const Header = () => {
-
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -51,7 +50,7 @@ export const Header = () => {
     <animated.section
       ref={ref}
       style={fadeNavigation}
-      className="fixed w-full inset-0 top-0 left-0 bottom-0 z-50  h-[92px] bg-white font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]"
+      className="fixed w-full bg-transparent inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]"
     >
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
