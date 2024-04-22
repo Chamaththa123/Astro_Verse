@@ -5,7 +5,7 @@ export const headerItems = [
   },
   {
     title: "APOD",
-    url: "/test1",
+    url: "/apod",
   },
   {
     title: "test2",
