@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import TodayApod from './TodayApod';
 
 export default function ApodPage() {
+
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+    <TodayApod/>
+    </>
+  );
 }
