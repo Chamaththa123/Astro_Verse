@@ -43,13 +43,13 @@ export default function TodayApod() {
               <div className="w-[50%]">
                 {apodData.media_type === "image" ? (
                   <img
-                    src={apodData.url}
+                    src={apodData.hdurl}
                     alt={apodData.title}
                     className="mt-4 items-center justify-center w-[80%]"
                   />
                 ) : apodData.media_type === "video" ? (
                   <iframe
-                    src={apodData.url}
+                    src={apodData.hdurl}
                     title={apodData.title}
                     className="mt-4 items-center justify-center"
                     width="560"
@@ -66,9 +66,13 @@ export default function TodayApod() {
                   {apodData.title}
                 </h2>
                 <div className="text-gray-500 font-medium">{formattedDate}</div>
+                <div className="border-2 my-[1%]"></div>
                 <p className="mt-6 leading-8 font-raleway">
                   {apodData.explanation}
                 </p>
+                <div className="mt-3">
+                &copy;<i>{apodData.copyright}</i>
+                </div>
               </div>
             </div>
           </div>
