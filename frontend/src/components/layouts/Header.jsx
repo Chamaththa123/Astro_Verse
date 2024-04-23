@@ -55,7 +55,7 @@ export const Header = () => {
     <animated.section
       ref={ref}
       style={fadeNavigation}
-      className={`fixed w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]`}
+      className={` w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]`}
     >
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />

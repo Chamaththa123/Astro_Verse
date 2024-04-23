@@ -31,7 +31,7 @@ export default function TodayApod() {
     fetchApod();
   }, [formattedDate]);
   return (
-    <section className="md:py-[9%] md:px-[5%] font-press-start">
+    <section className="md:py-[1%] md:px-[5%] font-press-start">
       <div>
         <h1 className="text-5xl font-bold text-gray-900 mt-10 font-raleway">
           Astronomy Picture of the Day
@@ -39,13 +39,13 @@ export default function TodayApod() {
 
         {apodData && (
           <div>
-            <div className="flex md:py-[4%]">
+            <div className="flex">
               <div className="w-[50%]">
                 {apodData.media_type === "image" ? (
                   <img
                     src={apodData.hdurl}
                     alt={apodData.title}
-                    className="mt-4 items-center justify-center w-[80%]"
+                    className="mt-4 items-center justify-center w-[85%] h-[500px]"
                   />
                 ) : apodData.media_type === "video" ? (
                   <iframe
@@ -71,7 +71,7 @@ export default function TodayApod() {
                   {apodData.explanation}
                 </p>
                 <div className="mt-3">
-                &copy;<i>{apodData.copyright}</i>
+                  &copy;<i>{apodData.copyright}</i>
                 </div>
               </div>
             </div>
