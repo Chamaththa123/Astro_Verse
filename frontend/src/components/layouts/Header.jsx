@@ -60,7 +60,7 @@ export const Header = () => {
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
       </Link>
-      <div className="hidden xl:flex w-[40%]  justify-around">
+      <div className="hidden xl:flex w-[60%]  justify-around">
         {headerItems.map((item, itemindex) => {
           return (
             <HeaderLink url={item.url} title={item.title} key={itemindex} />

@@ -4,11 +4,11 @@ export const headerItems = [
     url: "/",
   },
   {
-    title: "APOD",
+    title: "Astronomy Picture of the Day",
     url: "/apod",
   },
   {
-    title: "test2",
+    title: "Mars Rover Photos",
     url: "/test2",
   },
   {
