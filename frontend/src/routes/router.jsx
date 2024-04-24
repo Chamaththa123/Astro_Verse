@@ -5,6 +5,7 @@ import { Login } from "../pages/Login";
 import { GuestLayout } from "../components/layouts/GuestLayout";
 import { Home } from "../pages/home/Home";
 import Profile from "../pages/user/Profile";
+import ApodPage from "../pages/apod/ApodPage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/userprofile",
         element: <Profile />,
+      },
+      {
+        path: "/apod",
+        element: <ApodPage />,
       },
     ],
   },

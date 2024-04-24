@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
@@ -46,16 +47,20 @@ export const Header = () => {
     };
   }, []);
 
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const headerColor = currentPath === '/' ? 'bg-transparent fixed' : 'bg-green-500';
+
   return (
     <animated.section
       ref={ref}
       style={fadeNavigation}
-      className="fixed w-full bg-transparent inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]"
+      className={` w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] mb-40px xl:py-[10px] xl:px-[40px]`}
     >
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
       </Link>
-      <div className="hidden xl:flex w-[40%]  justify-around">
+      <div className="hidden xl:flex w-[60%]  justify-around">
         {headerItems.map((item, itemindex) => {
           return (
             <HeaderLink url={item.url} title={item.title} key={itemindex} />
