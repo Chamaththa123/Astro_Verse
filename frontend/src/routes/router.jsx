@@ -6,6 +6,7 @@ import { GuestLayout } from "../components/layouts/GuestLayout";
 import { Home } from "../pages/home/Home";
 import Profile from "../pages/user/Profile";
 import ApodPage from "../pages/apod/ApodPage";
+import MrpPage from "../pages/mrp/MrpPage";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "/apod",
         element: <ApodPage />,
+      },
+      {
+        path: "/mrp",
+        element: <MrpPage />,
       },
     ],
   },
