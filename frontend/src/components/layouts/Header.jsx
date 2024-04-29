@@ -49,7 +49,7 @@ export const Header = () => {
 
   const location = useLocation();
   const currentPath = location.pathname;
-  const headerColor = currentPath === '/' ? 'bg-transparent fixed' : 'bg-green-500';
+  const headerColor = currentPath === '/' ? 'bg-transparent fixed' : 'bg-[#00063F]';
 
   return (
     <animated.section

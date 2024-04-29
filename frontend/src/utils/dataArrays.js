@@ -9,7 +9,7 @@ export const headerItems = [
   },
   {
     title: "Mars Rover Photos",
-    url: "/test2",
+    url: "/mrp",
   },
   {
     title: "test3",
