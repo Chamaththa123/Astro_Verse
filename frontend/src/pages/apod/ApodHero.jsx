@@ -80,12 +80,12 @@ export default function ApodHero() {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-60"></div>
 
       <div className="absolute w-full xl:h-screen h-[60vh] flex  flex-col">
-        <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[45px] leading-[50px] md:mt-[16%] mt-4">
+        <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[45px] leading-[50px] md:mt-[15%] mt-4">
           Astronomy Picture of the Day
         </div>
         <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all"></div>
         <div className="md:w-[60%] text-left text-white xl:text-[18px] font-medium md:px-[5%] xl:leading-[25px] text-lg leading-[30px] md:block hidden bottom-0">
-          <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all p-3 rounded-lg mt-[25%]">
+          <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all p-3 rounded-lg mt-[26%]">
             Dive into the cosmos with our Astronomy Picture of the Day (APOD)
             hero section! Explore the breathtaking wonders of the universe
             through stunning imagery captured by NASA's powerful telescopes and
