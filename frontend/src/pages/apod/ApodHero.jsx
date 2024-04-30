@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSpring, animated,easings, useInView } from 'react-spring';
-import hero from './../../assets/images/apod-hero/apod-hero-1.jpg';
+import hero from './../../assets/images/apod-hero/apod-hero-3.jpg';
 import { Link } from 'react-router-dom';
 
 export default function ApodHero() {
