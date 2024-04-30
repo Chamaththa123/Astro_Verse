@@ -57,13 +57,13 @@ export default function AllApod() {
 
   return (
     <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
-      <h1 className="text-4xl font-bold text-gray-900 mt-10 ">
-        Astronomy Picture of previous Days
+      <h1 className="text-4xl font-bold text-gray-900 mt-10">
+        Astronomy Picture of Previous Days
       </h1>
 
-      <div className="md:flex my-10">
+      <div className="md:flex my-20">
         <div className="md:w-[20%] w-full">
-          <label htmlFor="start">Start Date:</label>
+          <label htmlFor="start" >Start Date:</label>
           <Input
             type="date"
             id="start"
@@ -87,7 +87,7 @@ export default function AllApod() {
       <div>
         {currentItems.map((item, index) => (
           <div key={index}>
-            <ApodCard item={item} maxChars={430} />
+            <ApodCard item={item} maxChars={250} />
           </div>
         ))}
       </div>

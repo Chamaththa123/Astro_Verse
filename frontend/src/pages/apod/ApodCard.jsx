@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { ArrowRight } from "../../utils/icons";
+import ApodDetail from "./ApodDetail";
 
 export default function ApodCard({ item, maxChars }) {
   const truncateText = (text, maxLength) => {
@@ -6,6 +8,17 @@ export default function ApodCard({ item, maxChars }) {
       return text;
     }
     return text.slice(0, maxLength) + "...";
+  };
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
+
+
+  const [selectedAPOD, setSelectedAPOD] = useState(null);
+
+  const handleClick = (view) => {
+    setSelectedAPOD(view);
+    handleOpen();
   };
 
   return (
@@ -16,13 +29,13 @@ export default function ApodCard({ item, maxChars }) {
             <img
               src={item.hdurl}
               alt={item.title}
-              className="items-center justify-center w-full h-[200px]"
+              className="items-center justify-center w-full h-[200px] rounded-lg"
             />
           ) : item.media_type === "video" ? (
             <iframe
               src={item.url}
               title={item.title}
-              className="mt-4 items-center justify-center w-full"
+              className="mt-4 items-center justify-center w-full  rounded-lg"
               height="200px"
               frameBorder="0"
               allowFullScreen
@@ -36,13 +49,21 @@ export default function ApodCard({ item, maxChars }) {
           <div className="text-[15px] py-3">{item.date}</div>
           <div>{truncateText(item.explanation, maxChars)}</div>
           <div className="flex justify-end">
-    <button >
-        See More
+    <button className="read-more text-[#ff1d03] font-semibold"  onClick={() => handleClick(item)}>
+      <div className="flex">Read More &nbsp;<ArrowRight/></div>
+        
     </button>
 </div>
 
         </div>
       </div>
+      {selectedAPOD && (
+        <ApodDetail
+        apod={selectedAPOD}
+          handleOpen={handleOpen}
+          open={open}
+        />
+      )}
     </>
   );
 }
