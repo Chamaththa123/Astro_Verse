@@ -275,3 +275,20 @@ body {
     box-shadow: none;
   }
 }
+
+.mySwiper .swiper-wrapper {
+  @apply flex items-start;
+}
+
+.mySwiper {
+  @apply  w-full rounded-md;
+}
+
+.techSwiper {
+  @apply h-[100%] w-full;
+}
+
+.techSwiper .swiper-wrapper {
+  padding-bottom: 10px;
+  padding-top: 25px;
+}
