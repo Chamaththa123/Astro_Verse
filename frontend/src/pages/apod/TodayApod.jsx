@@ -31,22 +31,35 @@ export default function TodayApod() {
     fetchApod();
   }, [formattedDate]);
   return (
-    <section className="md:py-[1%] md:px-[5%] font-press-start">
+    <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
       <div>
-        <h1 className="text-5xl font-bold text-gray-900 mt-10 font-raleway">
-          Astronomy Picture of the Day
-        </h1>
-
+  
         {apodData && (
           <div>
-            <div className="flex">
-              <div className="w-[50%]">
+            <div className="md:flex ">
+            <div className="md:w-[50%] w-full">
+                <h2 className="text-[25px] font-semibold mt-4 md:w-[85%]">
+                  {apodData.title}
+                </h2>
+                <div className="text-gray-500 font-medium">{formattedDate}</div>
+                <div className="border-2 my-[1%]"></div>
+                <p className="mt-6 leading-8 font-medium">
+                  {apodData.explanation}
+                </p>
+                <div className="mt-3">
+                  &copy;<i>{apodData.copyright}</i>
+                </div>
+              </div>
+              <div className="md:w-[50%] w-full">
                 {apodData.media_type === "image" ? (
+                  <div className="float-right md:w-[85%] w-full mt-4 h-[500px]">
                   <img
                     src={apodData.hdurl}
                     alt={apodData.title}
-                    className="mt-4 items-center justify-center w-[85%] h-[500px]"
+                    className="w-full h-full object-cover rounded-lg"
                   />
+                </div>
+                
                 ) : apodData.media_type === "video" ? (
                   <iframe
                     src={apodData.hdurl}
@@ -60,19 +73,6 @@ export default function TodayApod() {
                 ) : (
                   <p className="mt-4">Unsupported media type</p>
                 )}
-              </div>
-              <div className="w-[50%]">
-                <h2 className="text-[25px] font-semibold mt-4">
-                  {apodData.title}
-                </h2>
-                <div className="text-gray-500 font-medium">{formattedDate}</div>
-                <div className="border-2 my-[1%]"></div>
-                <p className="mt-6 leading-8 font-raleway">
-                  {apodData.explanation}
-                </p>
-                <div className="mt-3">
-                  &copy;<i>{apodData.copyright}</i>
-                </div>
               </div>
             </div>
           </div>

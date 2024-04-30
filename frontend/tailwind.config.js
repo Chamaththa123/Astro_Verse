@@ -12,7 +12,7 @@ export default withMT({
   theme: {
     extend: {
       fontFamily: {
-        "press-start": ["Raleway", "sans-serif"],
+        inter: ["Raleway", "sans-serif"],
       },
       colors: {
         "bottom-border": "#FFFFFF03",

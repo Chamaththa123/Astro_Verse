@@ -54,7 +54,7 @@ export default function AllMrp() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
+    <div className="md:py-[1%] md:px-[7%] px-[5%]">
       <div className="mb-4">
         <label htmlFor="dateInput" className="block text-sm font-medium text-gray-700">
           Select Date:
