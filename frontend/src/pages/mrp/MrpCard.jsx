@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../../assets/css/ImageLoader.css";
+import { ArrowRight } from "../../utils/icons";
 
 export default function MrpCard({ data }) {
   const [imageLoading, setImageLoading] = useState(true);
@@ -32,7 +33,10 @@ export default function MrpCard({ data }) {
             <div className="text-[15px]">Rover: {data.rover.name}</div>
             <div className="text-[15px]">Sol: {data.sol}</div>
           </div>
-          <div>See more</div>
+          <button className="read-more text-[#ff1d03] font-semibold" >
+      <div className="flex">Read More &nbsp;<ArrowRight/></div>
+        
+    </button>
         </div>
       </div>
     </>

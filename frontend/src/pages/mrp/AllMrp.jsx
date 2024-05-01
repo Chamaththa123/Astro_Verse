@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Select from "react-select";
+import { Input } from "@material-tailwind/react";
 import MrpCard from "./MrpCard";
 
 export default function AllMrp() {
   const [mrpData, setMrpData] = useState([]);
-  const [date, setDate] = useState("2017-6-3");
+  const [date, setDate] = useState("2017-06-03");
   const [selectedCamera, setSelectedCamera] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 12;
@@ -24,7 +25,7 @@ export default function AllMrp() {
           `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=XsIc7cYfjDxsHguj7E693VDCsxqAbfxnzt1LfAtQ`
         );
         if (!response.ok) {
-          throw new Error("Failed to fetch APOD data");
+          throw new Error("Failed to fetch MRP data");
         }
         const data = await response.json();
         setMrpData(data);
@@ -35,16 +36,18 @@ export default function AllMrp() {
     fetchMrp();
   }, [date]);
 
-  const filteredPhotos = mrpData.photos ? mrpData.photos.filter(photo => {
-    if (!selectedCamera) return true;
-    return photo.camera.name === selectedCamera.value;
-  }) : [];
+  const filteredPhotos = mrpData.photos
+    ? mrpData.photos.filter((photo) => {
+        if (!selectedCamera) return true;
+        return photo.camera.name === selectedCamera.value;
+      })
+    : [];
 
   const cameraOptions = [
     { value: "CHEMCAM", label: "CHEMCAM" },
     { value: "FHAZ", label: "FHAZ" },
     { value: "MARDI", label: "MARDI" },
-    { value: "RHAZ", label: "RHAZ" }
+    { value: "RHAZ", label: "RHAZ" },
   ];
 
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -55,31 +58,30 @@ export default function AllMrp() {
 
   return (
     <div className="md:py-[1%] md:px-[7%] px-[5%]">
-      <div className="mb-4">
-        <label htmlFor="dateInput" className="block text-sm font-medium text-gray-700">
-          Select Date:
-        </label>
-        <input
-          id="dateInput"
-          type="date"
-          className="mt-1 p-2 border border-gray-300 rounded-md"
-          value={date}
-          onChange={handleDateChange}
-        />
+      <div className="md:flex my-20">
+        <div className="md:w-[20%] w-full">
+          <label htmlFor="start">Select Date:</label>
+          <Input
+            id="dateInput"
+            type="date"
+            className="mt-1 p-2 border border-gray-300 rounded-md"
+            value={date}
+            onChange={handleDateChange}
+          />
+        </div>
+        <div className="md:w-[20%] w-full md:pl-[2%] md:mt-0 mt-5">
+          <label htmlFor="end">Select Camera:</label>
+          <Select
+            id="cameraSelect"
+            options={cameraOptions}
+            value={selectedCamera}
+            onChange={handleCameraChange}
+            isClearable
+          />
+        </div>
       </div>
-      <div className="mb-4">
-        <label htmlFor="cameraSelect" className="block text-sm font-medium text-gray-700">
-          Select Camera:
-        </label>
-        <Select
-          id="cameraSelect"
-          options={cameraOptions}
-          value={selectedCamera}
-          onChange={handleCameraChange}
-          isClearable
-        />
-      </div>
-      {mrpData.photos ? (
+
+      {mrpData.photos && mrpData.photos.length > 0 ? (
         <div className="mt-5 md:flex md:flex-wrap md:justify-between">
           {currentItems.map((photo) => (
             <div key={photo.id} className="md:w-1/4 w-full mb-4 p-4">
@@ -88,10 +90,10 @@ export default function AllMrp() {
           ))}
         </div>
       ) : (
-        <p>Loading...</p>
+        <p>No photos available for the selected date and camera.</p>
       )}
 
-<div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-10">
         <ul className="flex justify-center mt-4">
           {Array.from(
             { length: Math.ceil(mrpData.photos?.length / itemsPerPage) },
