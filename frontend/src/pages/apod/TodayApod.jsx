@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 export default function TodayApod() {
   const [apodData, setApodData] = useState(null);
+  const [imageLoading, setImageLoading] = useState(true);
 
   const currentDate = new Date();
   const formattedDate = `${currentDate.getFullYear()}-${(
@@ -30,6 +31,17 @@ export default function TodayApod() {
 
     fetchApod();
   }, [formattedDate]);
+
+  useEffect(() => {
+    if (apodData && apodData.media_type === "image") {
+      const image = new Image();
+      image.onload = () => {
+        setImageLoading(false);
+      };
+      image.src = apodData.hdurl;
+    }
+  }, [apodData]);
+
   return (
     <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
       <div>
@@ -52,11 +64,15 @@ export default function TodayApod() {
               <div className="md:w-[50%] w-full">
                 {apodData.media_type === "image" ? (
                   <div className="float-right md:w-[85%] w-full mt-4 ">
-                    <img
-                      src={apodData.hdurl}
-                      alt={apodData.title}
-                      className="w-full md:h-[540px] h-[350px] object-cover rounded-lg"
-                    />
+                    {imageLoading ? (
+                      <div>Loading...</div>
+                    ) : (
+                      <img
+                        src={apodData.hdurl}
+                        alt={apodData.title}
+                        className="w-full md:h-[540px] h-[350px] object-cover rounded-lg"
+                      />
+                    )}
                   </div>
                 ) : apodData.media_type === "video" ? (
                   <iframe
