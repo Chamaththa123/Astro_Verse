@@ -33,11 +33,10 @@ export default function TodayApod() {
   return (
     <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
       <div>
-  
         {apodData && (
           <div>
             <div className="md:flex ">
-            <div className="md:w-[50%] w-full">
+              <div className="md:w-[50%] w-full">
                 <h2 className="text-[25px] font-semibold mt-4 md:w-[85%]">
                   {apodData.title}
                 </h2>
@@ -52,14 +51,13 @@ export default function TodayApod() {
               </div>
               <div className="md:w-[50%] w-full">
                 {apodData.media_type === "image" ? (
-                  <div className="float-right md:w-[85%] w-full mt-4 h-[500px]">
-                  <img
-                    src={apodData.hdurl}
-                    alt={apodData.title}
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-                
+                  <div className="float-right md:w-[85%] w-full mt-4 ">
+                    <img
+                      src={apodData.hdurl}
+                      alt={apodData.title}
+                      className="w-full md:h-[540px] h-[350px] object-cover rounded-lg"
+                    />
+                  </div>
                 ) : apodData.media_type === "video" ? (
                   <iframe
                     src={apodData.hdurl}

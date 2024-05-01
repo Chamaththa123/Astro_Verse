@@ -12,7 +12,6 @@ export default function ApodDetail({ apod, handleOpen, open }) {
       <Dialog
         size="sm"
         open={open}
-        // handler={handleClose}
         className="bg-transparent shadow-none rounded-sm overflow-y-hidden scrollbar-y-style overflow-x-hidden font-inter"
       >
         <Card className="mx-auto w-full p-5 rounded-sm h-[90vh] overflow-y-auto scrollbar-y-style">
@@ -27,12 +26,12 @@ export default function ApodDetail({ apod, handleOpen, open }) {
               <CloseIcon />
             </div>
           </div>
-          <div>
+          <div className="my-3">
             {apod.media_type === "image" ? (
               <img
                 src={apod.hdurl}
                 alt={apod.title}
-                className="items-center justify-center w-full h-[400px] rounded-lg"
+                className="items-center justify-center w-full md:h-[400px] h-200 rounded-lg"
               />
             ) : apod.media_type === "video" ? (
               <iframe
@@ -47,11 +46,11 @@ export default function ApodDetail({ apod, handleOpen, open }) {
               <p className="mt-4">Unsupported media type</p>
             )}
           </div>
-          <div>
+          <div className="my-4">
           Date : {apod.date}
           </div>
 
-          <div>
+          <div className="">
           {apod.explanation}
           </div>
         </Card>
