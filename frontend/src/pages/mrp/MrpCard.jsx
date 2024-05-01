@@ -1,19 +1,30 @@
 import React, { useState } from "react";
-import "../../assets/css/ImageLoader.css"
+import "../../assets/css/ImageLoader.css";
 
 export default function MrpCard({ data }) {
-  const [imageLoading, setImageLoading] = useState(true); // State to track image loading
+  const [imageLoading, setImageLoading] = useState(true);
 
   return (
     <>
       <div className="mt-8">
         <div className="w-full">
-          {imageLoading && <div className="loader items-center justify-center py-[20%]"></div>}
+          {imageLoading && (
+            <div className="dot-spinner mt-[45%] ml-[45%]">
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+            </div>
+          )}
           <img
             src={data.img_src}
             alt={data.img_src}
-            className="items-center justify-center w-full h-[250px]"
-            onLoad={() => setImageLoading(false)} // Set loading to false when image is loaded
+            className="items-center justify-center w-full h-[250px] rounded-md"
+            onLoad={() => setImageLoading(false)}
           />
         </div>
         <div className="md:w-[100%] w-full md:py-1 py-5">

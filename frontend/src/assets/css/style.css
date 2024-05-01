@@ -11,6 +11,7 @@ body {
     transform: scale(1);
     opacity: 0.8;
   }
+
   to {
     transform: scale(1.2);
     opacity: 0.5;
@@ -63,6 +64,7 @@ body {
   background-color: transparent;
   transition: background-color 0.3s ease-in;
 }
+
 .web-button:hover {
   background-color: #461058;
   color: white;
@@ -72,6 +74,7 @@ body {
   text-shadow: -2px -2px 0 #324589, 2px -2px 0 #324589, -2px 2px 0 #324589,
     2px 2px 0 #324589;
 }
+
 .font-border-hover {
   text-shadow: -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
     2px 2px 0 #fff;
@@ -79,25 +82,31 @@ body {
 
 .contact-input {
   border: none;
-  border-bottom: 3px solid #2e02494d; /* Set the color of the bottom border */
+  border-bottom: 3px solid #2e02494d;
+  /* Set the color of the bottom border */
   outline: none;
 }
+
 .contact-input:focus {
-  border-bottom: 3px solid #000; /* Set the color of the bottom border */
+  border-bottom: 3px solid #000;
+  /* Set the color of the bottom border */
 }
 
 .contact-input::placeholder {
-  color: #2e02494d; /* Set the default placeholder color */
+  color: #2e02494d;
+  /* Set the default placeholder color */
 }
 
 .contact-input:focus::placeholder {
-  color: #000000; /* Change the color to your desired focus placeholder color */
+  color: #000000;
+  /* Change the color to your desired focus placeholder color */
 }
 
 .contact-button:hover {
   background-color: #461058;
   color: white;
 }
+
 .contact-button {
   background-color: #000000;
   transition: background-color 0.3s ease-in;
@@ -151,11 +160,12 @@ body {
 
 .glass-effect {
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.5); /* Adjust opacity as needed */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* Adjust opacity as needed */
 }
 
 .mySwiper .swiper-wrapper {
-  @apply flex  items-center;
+  @apply flex items-center;
 }
 
 .mySwiper {
@@ -196,8 +206,10 @@ body {
 }
 
 .print-page {
-  width: 210mm; /* A5 width in landscape */
-  height: 148mm; /* A5 height in landscape */
+  width: 210mm;
+  /* A5 width in landscape */
+  height: 148mm;
+  /* A5 height in landscape */
   margin: 0 auto;
   padding: 10mm;
   background-color: white;
@@ -209,6 +221,7 @@ body {
     margin: 0;
     padding: 0;
   }
+
   .print-page {
     box-shadow: none;
   }
@@ -219,7 +232,7 @@ body {
 }
 
 .mySwiper {
-  @apply  w-full rounded-md;
+  @apply w-full rounded-md;
 }
 
 .techSwiper {
