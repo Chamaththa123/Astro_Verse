@@ -12,7 +12,11 @@ export default withMT({
   theme: {
     extend: {
       fontFamily: {
-        inter: ["Raleway", "sans-serif"],
+        larsseit: ["Larsseit", "sans-serif"],
+        larsseitBold: ["LarsseitBold", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+        colfaxWeb: ["ColfaxWeb, sans-serif"],
       },
       colors: {
         "bottom-border": "#FFFFFF03",

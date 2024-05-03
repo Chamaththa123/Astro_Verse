@@ -29,18 +29,22 @@ const router = createBrowserRouter([
         path: "/mrp",
         element: <MrpPage />,
       },
-    ],
-  },
-  {
-    path: "/",
-    element: <GuestLayout />,
-    children: [
       {
-        path: "/login",
-        element: <Login />,
-      },
+              path: "/login",
+              element: <Login />,
+            },
     ],
   },
+  // {
+  //   path: "/",
+  //   element: <GuestLayout />,
+  //   children: [
+  //     {
+  //       path: "/login",
+  //       element: <Login />,
+  //     },
+  //   ],
+  // },
 ]);
 
 export default router;

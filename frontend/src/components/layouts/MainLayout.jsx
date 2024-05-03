@@ -18,9 +18,9 @@ export const MainLayout = () => {
     }
   }, [location.search]);
 
-  if (!token) {
-    return <Navigate to="/login" />;
-  }
+  // if (!token) {
+  //   return <Navigate to="/login" />;
+  // }
 
   return (
     <section className="bg-white w-full min-h-screen flex">

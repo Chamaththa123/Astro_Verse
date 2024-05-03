@@ -9,9 +9,9 @@ export const GuestLayout = () => {
 
   
 
-  if (token) {
-    return <Navigate to="/" />;
-  }
+  // if (token) {
+  //   return <Navigate to="/" />;
+  // }
 
   return (
     <section className=" bg-blue-gray-50 w-full h-screen flex items-center justify-center">

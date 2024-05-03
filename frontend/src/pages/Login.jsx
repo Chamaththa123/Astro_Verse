@@ -10,7 +10,7 @@ import {
 } from "@material-tailwind/react";
 import logo from "../assets/images/logo.png";
 import { Link, useNavigate } from "react-router-dom";
-import axiosClient from "../../axios-client";
+import axios from "axios"; // Import axios
 import { useStateContext } from "../contexts/NavigationContext";
 import { GoogleIcon } from "../utils/icons";
 
@@ -56,8 +56,8 @@ export const Login = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       setErrors("");
-      axiosClient
-        .post("/users/login", loginData)
+      axios
+        .post("http://localhost:8000/api/users/login", loginData)
         .then(({ data }) => {
           setUser(data.user);
           setToken(data.token);

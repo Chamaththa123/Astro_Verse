@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 import { useInView } from "react-intersection-observer";
@@ -8,8 +8,13 @@ import menu from "./../../assets/images/menu.png";
 import { HeaderLink } from "./HeaderLink";
 import { headerItems } from "../../utils/dataArrays";
 import { IoMdClose } from "react-icons/io";
+import { useStateContext } from "../../contexts/NavigationContext";
+import { SupplierIcon } from "../../utils/icons";
+import { UserLogin } from "../../pages/user/UserLogin";
 
 export const Header = () => {
+  const { user } = useStateContext();
+
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -49,24 +54,54 @@ export const Header = () => {
 
   const location = useLocation();
   const currentPath = location.pathname;
-  const headerColor = currentPath === '/' ? 'bg-transparent' : 'bg-black';
+  const headerColor = currentPath === "/" ? "bg-transparent fixed" : "bg-black";
+
+  const [newOpen, setNewOpen] = useState(false);
+  const newCustomerHandleOpen = () => setNewOpen((cur) => !cur);
+
+  const handleSignInClick = (e) => {
+    // Prevent default navigation behavior
+    e.preventDefault();
+    // Open the sign-in modal
+    newCustomerHandleOpen();
+  };
 
   return (
+    <>
     <animated.section
       ref={ref}
       style={fadeNavigation}
-      className={`fixed w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] xl:py-[10px] xl:px-[40px]`}
+      className={` w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] xl:py-[10px] xl:px-[40px]`}
     >
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
       </Link>
-      <div className="hidden xl:flex w-[60%]  justify-around">
+      <div className="hidden xl:flex w-[70%]  justify-around font-larssei">
         {headerItems.map((item, itemindex) => {
           return (
             <HeaderLink url={item.url} title={item.title} key={itemindex} />
           );
         })}
+
+        <div className="flex justify-between mt-[-10px]">
+          <div className="text-white mr-4 mt-[3px]">
+            <SupplierIcon />
+          </div>
+          <div >
+            {user ? (
+              <p className="text-white">Welcome, {user.firstName}</p>
+            ) : (
+              <>
+                 <Link onClick={handleSignInClick} to="#">
+                    <div className="text-white text-[13px]">Welcome</div>
+                    <div className="text-white text-[13px]">SignIn / Sign up</div>
+                  </Link>
+              </>
+            )}
+          </div>
+        </div>
       </div>
+
       {/* <Link
         to="/schedule"
         className="md:hidden inline-flex px-4 py-2 bg-red-600 justify-center items-center  text-white text-md font-bold hover:bg-gradient-to-r hover:from-[#23216E] hover:via-[#830862] hover:to-red-400 "
@@ -113,5 +148,10 @@ export const Header = () => {
         </div>
       </div>
     </animated.section>
+    <UserLogin
+    
+    handleOpen={newCustomerHandleOpen}
+    open={newOpen}/>
+    </>
   );
 };

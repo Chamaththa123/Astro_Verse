@@ -46,7 +46,7 @@ export default function MrpHero() {
   return (
     <section
       ref={ref}
-      className="overflow-hidden w-full xl:h-[600px] md:h-[60vh] h-[80vh] md:mt-[50px] mt-[-40px] relative flex items-center justify-center font-press-start"
+      className="overflow-hidden w-full xl:h-[600px] md:h-[60vh] h-[80vh]  mt-[-40px] relative flex items-center justify-center font-press-start"
     >
       <div className="absolute top-0 left-0 w-full z-50 bg-[#0c2051]"></div>
       {/* <Swiper
