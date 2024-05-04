@@ -78,7 +78,7 @@ export const UserLogin = ({ handleOpen, open }) => {
             <TabsBody>
               {data.map(({ value, desc }) => (
                 <TabPanel key={value} value={value}>
-                  {value === "signin" ? <SignIn /> : <SignUp />}
+                  {value === "signin" ? <SignIn onSuccess={handleClose}/> : <SignUp />}
                 </TabPanel>
               ))}
             </TabsBody>

@@ -93,9 +93,6 @@ export default function SignUp() {
               </Alert>
             )}
           </div>
-          <h4 className="block font-inter text-xl antialiased font-bold leading-snug tracking-normal text-blue-gray-900">
-            Sign Up
-          </h4>
           <div className="relative h-11 w-full min-w-[200px]">
             <input
               className="w-full h-full px-3 py-3 font-inter text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -153,7 +150,7 @@ export default function SignUp() {
           <div className="relative h-11 w-full min-w-[200px]">
             <input
               className="w-full h-full px-3 py-3 font-inter text-sm font-normal transition-all bg-transparent border rounded-md peer border-blue-gray-200 border-t-transparent text-blue-gray-700 outline outline-0 placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-gray-900 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
-              type="text"
+              type="password"
               name="password"
               placeholder=" "
               value={formData.password}
