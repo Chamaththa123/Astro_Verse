@@ -53,13 +53,16 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("http://localhost:8000/api/users/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "http://chamaththa.infinitoapparel.ca/api/users/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
       if (response.ok) {
         setSuccessMessage("User registered successfully!");
         setFormData(initialState);

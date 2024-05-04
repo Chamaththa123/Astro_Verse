@@ -27,7 +27,7 @@ export const SignIn = ({ onSuccess }) => {
 
     if (Object.keys(validationErrors).length === 0) {
       axios
-        .post("http://localhost:8000/api/users/login", loginData)
+        .post("http://chamaththa.infinitoapparel.ca/api/users/login", loginData)
         .then(({ data }) => {
           setUser(data.user);
           setToken(data.token);
