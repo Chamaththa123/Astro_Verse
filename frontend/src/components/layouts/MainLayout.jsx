@@ -25,7 +25,7 @@ export const MainLayout = () => {
   return (
     <section className="bg-white w-full min-h-screen flex">
       <section className="w-[100%] md:w-[100%] flex flex-col gap-10 ">
-        <Header/>
+        {/* <Header/> */}
         <Outlet />
       </section>
     </section>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { Link } from 'react-router-dom';
 import hero from './../../assets/images/hero.mp4';
+import { Header } from '../../components/layouts/Header';
 
 export const Home = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -20,6 +21,8 @@ export const Home = () => {
   }, [inView]);
 
   return (
+   <>
+   <Header/>
     <section
       ref={ref}
       className='overflow-hidden w-full xl:h-screen md:h-[60vh] h-[80vh] relative flex items-center justify-center font-press-start'
@@ -34,5 +37,6 @@ export const Home = () => {
         <div className="text-center text-white xl:text-2xl font-medium  xl:leading-10 text-lg leading-[30px]">Exploring the Universe, One Click at a Time </div>
       </div>
     </section>
+   </>
   )
 }
