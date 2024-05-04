@@ -43,7 +43,7 @@ export default function TodayApod() {
   }, [apodData]);
 
   return (
-    <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
+    <section className="md:py-[1%] md:px-[7%] px-[5%] font-inter mb-6">
       <div>
         {apodData && (
           <div>
@@ -54,10 +54,10 @@ export default function TodayApod() {
                 </h2>
                 <div className="text-gray-500 font-medium">{formattedDate}</div>
                 <div className="border-2 my-[1%]"></div>
-                <p className="mt-6 leading-8 font-medium">
+                <p className="mt-6 leading-8 font-medium font-inter md:block hidden">
                   {apodData.explanation}
                 </p>
-                <div className="mt-3">
+                <div className="mt-3 font-inter md:block hidden">
                   &copy;<i>{apodData.copyright}</i>
                 </div>
               </div>
@@ -89,10 +89,20 @@ export default function TodayApod() {
                 )}
               </div>
             </div>
+            <p className=" leading-8 font-medium font-inter block md:hidden">
+                {apodData.explanation}
+              </p>
+              <div className="mt-3 font-inter block md:hidden">
+                  &copy;<i>{apodData.copyright}</i>
+                </div>
           </div>
         )}
       </div>
-      <div></div>
+      <div>
+        
+      </div>
+      <div>
+            </div>
     </section>
   );
 }

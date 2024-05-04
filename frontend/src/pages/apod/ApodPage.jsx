@@ -3,6 +3,7 @@ import TodayApod from './TodayApod';
 import AllApod from './AllApod';
 import ApodHero from './ApodHero';
 import Planets from './Planets';
+import Footer from '../../components/layouts/Footer';
 
 export default function ApodPage() {
 
@@ -12,6 +13,7 @@ export default function ApodPage() {
     <TodayApod/>
     <Planets/>
     <AllApod/>
+    <Footer/>
     </>
   );
 }
