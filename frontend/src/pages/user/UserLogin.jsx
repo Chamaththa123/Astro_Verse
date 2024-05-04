@@ -69,7 +69,7 @@ export const UserLogin = ({ handleOpen, open }) => {
                     activeTab === value
                       ? "text-gray-900 font-bold"
                       : "text-gray-500 hover:text-gray-700"
-                  } px-4 py-2 cursor-pointer focus:outline-none`}
+                  } px-1 py-2 cursor-pointer focus:outline-none`}
                 >
                   {label}
                 </Tab>
@@ -78,7 +78,7 @@ export const UserLogin = ({ handleOpen, open }) => {
             <TabsBody>
               {data.map(({ value, desc }) => (
                 <TabPanel key={value} value={value}>
-                  {value === "signin" ? <SignIn /> : <SignUp />}
+                  {value === "signin" ? <SignIn onSuccess={handleClose}/> : <SignUp />}
                 </TabPanel>
               ))}
             </TabsBody>

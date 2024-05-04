@@ -56,13 +56,13 @@ export default function AllApod() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <section className="md:py-[1%] md:px-[7%] px-[5%] font-press-start">
-      <h1 className="text-4xl font-bold text-gray-900 mt-10">
+    <section className="md:py-[1%] md:px-[7%] px-[5%] font-inter">
+      <h1 className="md:text-4xl text-3xl font-bold text-gray-900 mt-2">
         Astronomy Picture of Previous Days
       </h1>
 
-      <div className="md:flex my-20">
-        <div className="md:w-[20%] w-full">
+      <div className="md:flex md:my-20 my-10">
+        <div className="md:w-[20%] w-full font-inter">
           <label htmlFor="start" >Start Date:</label>
           <Input
             type="date"
@@ -72,7 +72,7 @@ export default function AllApod() {
             onChange={handleStartDateChange}
           />
         </div>
-        <div className="md:w-[20%] w-full md:pl-[2%] md:mt-0 mt-5">
+        <div className="md:w-[20%] w-full md:pl-[2%] md:mt-0 mt-5 font-inter">
           <label htmlFor="end">End Date:</label>
           <Input
             type="date"

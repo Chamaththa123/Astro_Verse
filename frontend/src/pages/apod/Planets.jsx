@@ -48,9 +48,22 @@ export default function Planets() {
   }, [inView]);
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 3500,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+    pauseOnHover: false,
+    arrows: false,
+  };
+
+  const settingsMobile = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     speed: 3500,
@@ -71,7 +84,16 @@ export default function Planets() {
         style={fadeScreen}
         className="flex flex-col w-full item center justify-center slider-container absolute inset-0"
       >
-        <Slider {...settings}>
+        <Slider {...settings} className="md:block hidden">
+          {planet.slice(0, 9).map((item, itemIndex) => {
+            return (
+              <div key={itemIndex} className="flex items-center justify-evenly">
+                <img src={item.img} className="w-[80px] md:w-[120px]" />
+              </div>
+            );
+          })}
+        </Slider>
+        <Slider {...settingsMobile} className="md:hidden block">
           {planet.slice(0, 9).map((item, itemIndex) => {
             return (
               <div key={itemIndex} className="flex items-center justify-evenly">

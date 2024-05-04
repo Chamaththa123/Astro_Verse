@@ -47,7 +47,7 @@ export default function ApodHero() {
   return (
     <section
       ref={ref}
-      className="overflow-hidden w-full xl:h-screen md:h-[60vh] h-[80vh] md:mt-[-50px] mt-[-40px] relative flex items-center justify-center font-press-start"
+      className="overflow-hidden w-full xl:h-screen md:h-[60vh] h-[400px] md:mt-[-50px] mt-[-40px] relative flex items-center justify-center font-inter"
     >
       <div className="absolute top-0 left-0 w-full z-50 bg-[#0c2051]"></div>
       {/* <Swiper
@@ -77,23 +77,19 @@ export default function ApodHero() {
         className=" w-full xl:h-screen h-[80vh] object-cover"
         alt=""
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-60"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
 
-      <div className="absolute w-full xl:h-screen h-[60vh] flex  flex-col">
-        <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[45px] leading-[50px] md:mt-[15%] mt-4">
+      <div className="absolute w-full xl:h-screen flex  flex-col">
+        <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[30px] leading-[50px] md:mt-[15%] mt-0">
           Astronomy Picture of the Day
         </div>
         <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all"></div>
-        <div className="md:w-[60%] text-left text-white xl:text-[18px] font-medium md:px-[5%] xl:leading-[25px] text-lg leading-[30px] md:block hidden bottom-0">
-          <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all p-3 rounded-lg mt-[26%]">
+        <div className="md:w-[40%] text-left text-white xl:text-[18px] font-medium md:px-[5%] px-[5%] xl:leading-[25px] text-lg leading-[30px] bottom-0">
+          <div className="bg-[#DCDCDC03] font-inter text-base backdrop-filter backdrop-blur-[10px] transition-all p-3 rounded-lg mt-[56%] md:block hidden">
             Dive into the cosmos with our Astronomy Picture of the Day (APOD)
             hero section! Explore the breathtaking wonders of the universe
             through stunning imagery captured by NASA's powerful telescopes and
-            spacecraft. Each day unveils a new celestial marvel, from distant
-            galaxies to mesmerizing nebulae and beyond. Let the awe-inspiring
-            beauty of the cosmos ignite your curiosity and inspire your
-            imagination as you embark on a journey through the vastness of space
-            right from your screen.
+            spacecraft.
           </div>
         </div>
       </div>

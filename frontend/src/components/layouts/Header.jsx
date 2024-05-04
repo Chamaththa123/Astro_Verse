@@ -11,6 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { useStateContext } from "../../contexts/NavigationContext";
 import { SupplierIcon } from "../../utils/icons";
 import { UserLogin } from "../../pages/user/UserLogin";
+import UserProfile from "../../pages/user/UserProfile";
 
 export const Header = () => {
   const { user } = useStateContext();
@@ -57,13 +58,23 @@ export const Header = () => {
   const headerColor = currentPath === "/" ? "bg-transparent fixed" : "bg-black";
 
   const [newOpen, setNewOpen] = useState(false);
-  const newCustomerHandleOpen = () => setNewOpen((cur) => !cur);
+  const newHandleOpen = () => setNewOpen((cur) => !cur);
+
+  const [newProfileOpen, setNewProfileOpen] = useState(false);
+  const newProfileHandleOpen = () => setNewProfileOpen((cur) => !cur);
 
   const handleSignInClick = (e) => {
     // Prevent default navigation behavior
     e.preventDefault();
     // Open the sign-in modal
-    newCustomerHandleOpen();
+    newHandleOpen();
+  };
+
+  const handleProfileClick = (e) => {
+    // Prevent default navigation behavior
+    e.preventDefault();
+    // Open the sign-in modal
+    newProfileHandleOpen();
   };
 
   return (
@@ -76,7 +87,7 @@ export const Header = () => {
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
       </Link>
-      <div className="hidden xl:flex w-[70%]  justify-around font-larssei">
+      <div className="hidden xl:flex w-[70%]  justify-around font-inter">
         {headerItems.map((item, itemindex) => {
           return (
             <HeaderLink url={item.url} title={item.title} key={itemindex} />
@@ -89,7 +100,11 @@ export const Header = () => {
           </div>
           <div >
             {user ? (
-              <p className="text-white">Welcome, {user.firstName}</p>
+              <Link onClick={handleProfileClick} to="#">
+              <div className="text-white text-[13px]">Welcome</div>
+              <div className="text-white text-[13px]">{user.firstName}</div>
+            </Link>
+              // <p className="text-white">Welcome, {user.firstName}</p>
             ) : (
               <>
                  <Link onClick={handleSignInClick} to="#">
@@ -149,9 +164,11 @@ export const Header = () => {
       </div>
     </animated.section>
     <UserLogin
-    
-    handleOpen={newCustomerHandleOpen}
+    handleOpen={newHandleOpen}
     open={newOpen}/>
+        <UserProfile
+        handleOpen={newProfileHandleOpen}
+        open={newProfileOpen}/>
     </>
   );
 };

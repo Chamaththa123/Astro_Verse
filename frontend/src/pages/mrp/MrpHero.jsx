@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { apod } from "../../utils/dataArrays";
 export default function MrpHero() {
-    const [isVisible, setIsVisible] = useState(true); // Set initial state to true
+  const [isVisible, setIsVisible] = useState(true); // Set initial state to true
   const [ref, inView] = useInView({
     triggerOnce: true,
   });
@@ -46,42 +46,22 @@ export default function MrpHero() {
   return (
     <section
       ref={ref}
-      className="overflow-hidden w-full xl:h-[600px] md:h-[60vh] h-[80vh]  mt-[-40px] relative flex items-center justify-center font-press-start"
+      className="overflow-hidden w-full xl:h-[600px] md:h-[60vh] h-[380px]  mt-[-40px] relative flex items-center justify-center font-inter"
     >
-      <div className="absolute top-0 left-0 w-full z-50 bg-[#0c2051]"></div>
-      {/* <Swiper
-          slidesPerView={4}
-          loop={true}
-          autoplay={true}
-          breakpoints={{
-            768: {
-              slidesPerView: 1,
-            },
-          }}
-          modules={[Autoplay, EffectFade, Navigation, Pagination]}
-          className="techSwiper "
-        >
-          {apod.slice(0, 6).map((item, itemIndex) => {
-            return (
-              <SwiperSlide
-                key={itemIndex}
-              >
-                <img src={item.img} className=' w-full xl:h-screen h-[80vh] object-cover' alt="" />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper> */}
       <img
         src={hero}
-        className=" w-full xl:h-screen h-[80vh] object-cover"
+        className=" w-full xl:h-screen h-[380px] object-cover"
         alt=""
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-60"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
 
       <div className="absolute flex  flex-col">
-        <div className="w-full md:text-center text-center text-[#F2F9FF] xl:text-[55px] text-bold">Explore the Mysteries of Mars<br/> Through the Lens of NASA's Rovers</div>
+        <div className="w-full md:text-center md:px-0 px-[5%] text-center text-[#F2F9FF] md:text-[55px] text-[23px] text-bold">
+          Explore the Mysteries of Mars
+          <br /> Through the Lens of NASA's Rovers
+        </div>
         <div className="bg-[#DCDCDC03] backdrop-filter backdrop-blur-[10px] transition-all"></div>
       </div>
     </section>
-  )
+  );
 }

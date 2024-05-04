@@ -57,10 +57,10 @@ export default function AllMrp() {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="md:py-[1%] md:px-[7%] px-[5%]">
-      <div className="md:flex my-20">
+    <div className="md:py-[0%] md:px-[7%] px-[5%]">
+      <div className="md:flex my-10">
         <div className="md:w-[20%] w-full">
-          <label htmlFor="start">Select Date:</label>
+          <label htmlFor="start" className="font-inter font-normal">Select Date</label>
           <Input
             id="dateInput"
             type="date"
@@ -70,7 +70,7 @@ export default function AllMrp() {
           />
         </div>
         <div className="md:w-[20%] w-full md:pl-[2%] md:mt-0 mt-5">
-          <label htmlFor="end">Select Camera:</label>
+          <label htmlFor="end" className="font-inter font-normal">Select Camera</label>
           <Select
             id="cameraSelect"
             options={cameraOptions}
@@ -82,9 +82,9 @@ export default function AllMrp() {
       </div>
 
       {mrpData.photos && mrpData.photos.length > 0 ? (
-        <div className="mt-5 md:flex md:flex-wrap md:justify-between">
+        <div className="mt-1 md:flex md:flex-wrap md:justify-between">
           {currentItems.map((photo) => (
-            <div key={photo.id} className="md:w-1/4 w-full mb-4 p-4">
+            <div key={photo.id} className="md:w-1/4 w-full md:mb-5 p-4">
               <MrpCard data={photo} />
             </div>
           ))}
