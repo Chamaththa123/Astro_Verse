@@ -7,7 +7,7 @@ export default function MrpCard({ data }) {
 
   return (
     <>
-      <div className="mt-8">
+      <div>
         <div className="w-full">
           {imageLoading && (
             <div className="dot-spinner mt-[45%] ml-[45%]">
