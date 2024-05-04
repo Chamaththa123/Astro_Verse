@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { Dialog, Card } from "@material-tailwind/react";
 import { CloseIcon } from "../../utils/icons";
-import { Tabs, TabsHeader, TabsBody, Tab, TabPanel } from "@material-tailwind/react";
+import {
+  Tabs,
+  TabsHeader,
+  TabsBody,
+  Tab,
+  TabPanel,
+} from "@material-tailwind/react";
 import SignUp from "./SignUp";
+import { SignIn } from "./SignIn";
 
 export const UserLogin = ({ handleOpen, open }) => {
   const handleClose = () => {
@@ -33,7 +40,7 @@ export const UserLogin = ({ handleOpen, open }) => {
         className="bg-transparent shadow-none rounded-sm overflow-y-scroll scrollbar-y-style overflow-x-hidden font-inter"
       >
         <Card className="mx-auto w-full p-5 rounded-sm font-inter">
-          <div className="flex justify-between align-center border-b-2">
+          <div className="flex justify-between align-center">
             <div className="font-larsseit text-lg font-bold pb-5">
               New Dealer
             </div>
@@ -58,7 +65,11 @@ export const UserLogin = ({ handleOpen, open }) => {
                   key={value}
                   value={value}
                   onClick={() => setActiveTab(value)}
-                  className={activeTab === value ? "text-gray-900" : ""}
+                  className={`${
+                    activeTab === value
+                      ? "text-gray-900 font-bold"
+                      : "text-gray-500 hover:text-gray-700"
+                  } px-4 py-2 cursor-pointer focus:outline-none`}
                 >
                   {label}
                 </Tab>
@@ -67,11 +78,7 @@ export const UserLogin = ({ handleOpen, open }) => {
             <TabsBody>
               {data.map(({ value, desc }) => (
                 <TabPanel key={value} value={value}>
-                  {value === "signin" ? (
-                    <div>{desc}</div> // Here, you can render different components based on the tab value
-                  ) : (
-                    < SignUp/> // Render the signup form component here
-                  )}
+                  {value === "signin" ? <SignIn /> : <SignUp />}
                 </TabPanel>
               ))}
             </TabsBody>
