@@ -40,10 +40,7 @@ export const UserLogin = ({ handleOpen, open }) => {
         className="bg-transparent shadow-none rounded-sm overflow-y-scroll scrollbar-y-style overflow-x-hidden font-inter"
       >
         <Card className="mx-auto w-full p-5 rounded-sm font-inter">
-          <div className="flex justify-between align-center">
-            <div className="font-larsseit text-lg font-bold pb-5">
-              New Dealer
-            </div>
+          <div className="flex justify-end align-center">
             <div
               className="font-bold text-[20px] cursor-pointer"
               onClick={handleClose}
@@ -78,7 +75,11 @@ export const UserLogin = ({ handleOpen, open }) => {
             <TabsBody>
               {data.map(({ value, desc }) => (
                 <TabPanel key={value} value={value}>
-                  {value === "signin" ? <SignIn onSuccess={handleClose}/> : <SignUp />}
+                  {value === "signin" ? (
+                    <SignIn onSuccess={handleClose} />
+                  ) : (
+                    <SignUp />
+                  )}
                 </TabPanel>
               ))}
             </TabsBody>

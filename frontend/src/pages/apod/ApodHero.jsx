@@ -50,34 +50,12 @@ export default function ApodHero() {
       className="overflow-hidden w-full xl:h-screen md:h-[60vh] h-[400px] md:mt-[-50px] mt-[-40px] relative flex items-center justify-center font-inter"
     >
       <div className="absolute top-0 left-0 w-full z-50 bg-[#0c2051]"></div>
-      {/* <Swiper
-          slidesPerView={4}
-          loop={true}
-          autoplay={true}
-          breakpoints={{
-            768: {
-              slidesPerView: 1,
-            },
-          }}
-          modules={[Autoplay, EffectFade, Navigation, Pagination]}
-          className="techSwiper "
-        >
-          {apod.slice(0, 6).map((item, itemIndex) => {
-            return (
-              <SwiperSlide
-                key={itemIndex}
-              >
-                <img src={item.img} className=' w-full xl:h-screen h-[80vh] object-cover' alt="" />
-              </SwiperSlide>
-            );
-          })}
-        </Swiper> */}
       <img
         src={hero}
         className=" w-full xl:h-screen h-[80vh] object-cover"
         alt=""
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
+      <div className="absolute  top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
 
       <div className="absolute w-full xl:h-screen flex  flex-col">
         <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[30px] leading-[50px] md:mt-[15%] mt-0">

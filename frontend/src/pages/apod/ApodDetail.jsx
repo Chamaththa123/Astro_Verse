@@ -31,7 +31,7 @@ export default function ApodDetail({ apod, handleOpen, open }) {
               <img
                 src={apod.url}
                 alt={apod.title}
-                className="items-center justify-center w-full md:h-[400px] h-[250px] rounded-lg"
+                className="items-center justify-center w-full md:h-[400px] h-auto rounded-lg"
               />
             ) : apod.media_type === "video" ? (
               <iframe
@@ -50,7 +50,7 @@ export default function ApodDetail({ apod, handleOpen, open }) {
           Date : {apod.date}
           </div>
 
-          <div className="font-inter font-medium">
+          <div className="font-inter font-normal">
           {apod.explanation}
           </div>
         </Card>

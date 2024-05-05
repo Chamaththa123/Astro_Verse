@@ -3,6 +3,9 @@ import { ArrowRight } from "../../utils/icons";
 import ApodDetail from "./ApodDetail";
 
 export default function ApodCard({ item, maxChars }) {
+
+  const [imageLoading, setImageLoading] = useState(true);
+
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
       return text;
@@ -13,7 +16,6 @@ export default function ApodCard({ item, maxChars }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
-
   const [selectedAPOD, setSelectedAPOD] = useState(null);
 
   const handleClick = (view) => {
@@ -23,13 +25,26 @@ export default function ApodCard({ item, maxChars }) {
 
   return (
     <>
-      <div className="md:flex mt-8">
+      <div className="md:flex mt-8 font-inter">
         <div className="md:w-[30%] w-full">
+        {imageLoading && (
+            <div className="relative dot-spinner mt-[45%] ml-[45%]">
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+            </div>
+          )}
           {item.media_type === "image" ? (
             <img
               src={item.hdurl}
               alt={item.title}
               className="items-center justify-center w-full h-[200px] rounded-lg"
+              onLoad={() => setImageLoading(false)}
             />
           ) : item.media_type === "video" ? (
             <iframe
@@ -49,20 +64,20 @@ export default function ApodCard({ item, maxChars }) {
           <div className="text-[15px] py-3">{item.date}</div>
           <div>{truncateText(item.explanation, maxChars)}</div>
           <div className="flex justify-end">
-    <button className="read-more text-[#ff1d03] font-semibold"  onClick={() => handleClick(item)}>
-      <div className="flex">Read More &nbsp;<ArrowRight/></div>
-        
-    </button>
-</div>
-
+            <button
+              className="read-more text-[#ff1d03] font-semibold"
+              onClick={() => handleClick(item)}
+            >
+              <div className="flex">
+                Read More &nbsp;
+                <ArrowRight />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
       {selectedAPOD && (
-        <ApodDetail
-        apod={selectedAPOD}
-          handleOpen={handleOpen}
-          open={open}
-        />
+        <ApodDetail apod={selectedAPOD} handleOpen={handleOpen} open={open} />
       )}
     </>
   );

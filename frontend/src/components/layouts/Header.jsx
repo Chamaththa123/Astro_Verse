@@ -9,7 +9,7 @@ import { HeaderLink } from "./HeaderLink";
 import { headerItems } from "../../utils/dataArrays";
 import { IoMdClose } from "react-icons/io";
 import { useStateContext } from "../../contexts/NavigationContext";
-import { SupplierIcon } from "../../utils/icons";
+import { UserMobileIcon ,UserIcon } from "../../utils/icons";
 import { UserLogin } from "../../pages/user/UserLogin";
 import UserProfile from "../../pages/user/UserProfile";
 
@@ -82,7 +82,7 @@ export const Header = () => {
     <animated.section
       ref={ref}
       style={fadeNavigation}
-      className={` w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-press-start flex items-center justify-between p-[15px] xl:py-[10px] xl:px-[40px]`}
+      className={` w-full ${headerColor} inset-0 top-0 left-0 bottom-0 z-50  h-[92px]  font-inter flex items-center justify-between p-[15px] xl:py-[10px] xl:px-[40px]`}
     >
       <Link to="/">
         <img src={logo} className="w-[120px] md:w-[100px]" alt="" />
@@ -96,7 +96,7 @@ export const Header = () => {
 
         <div className="flex justify-between mt-[-10px]">
           <div className="text-white mr-4 mt-[3px]">
-            <SupplierIcon />
+            <UserIcon />
           </div>
           <div >
             {user ? (
@@ -104,7 +104,6 @@ export const Header = () => {
               <div className="text-white text-[13px]">Welcome</div>
               <div className="text-white text-[13px]">{user.firstName}</div>
             </Link>
-              // <p className="text-white">Welcome, {user.firstName}</p>
             ) : (
               <>
                  <Link onClick={handleSignInClick} to="#">
@@ -150,6 +149,27 @@ export const Header = () => {
           <span onClick={handleFadeIn}>
             <IoMdClose className="text-[20px]" />
           </span>
+        </div>
+        <div className="flex  mt-[30px]">
+          <div className=" mr-4 mt-[10px]">
+            <UserMobileIcon />
+          </div>
+          <div >
+            {user ? (
+              <Link onClick={handleProfileClick} to="#">
+              <div className=" text-[20px]">Welcome</div>
+              <div className="text-[20px]">{user?.firstName}</div>
+            </Link>
+              // <p className="text-white">Welcome, {user.firstName}</p>
+            ) : (
+              <>
+                 <Link onClick={handleSignInClick} to="#">
+                    <div className=" text-[20px]">Welcome</div>
+                    <div className="text-[20px]">SignIn / Sign up</div>
+                  </Link>
+              </>
+            )}
+          </div>
         </div>
         {/* mobile header  */}
         <div className="w-full flex mt-[80px] flex-col gap-3">
