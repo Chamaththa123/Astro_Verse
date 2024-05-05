@@ -25,10 +25,6 @@ export const headerItems = [
     title: "Mars Rover Photos",
     url: "/mrp",
   },
-  {
-    title: "test3",
-    url: "/test3",
-  },
 ];
 
 export const apod = [

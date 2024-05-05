@@ -9,7 +9,7 @@ import { HeaderLink } from "./HeaderLink";
 import { headerItems } from "../../utils/dataArrays";
 import { IoMdClose } from "react-icons/io";
 import { useStateContext } from "../../contexts/NavigationContext";
-import { SupplierIcon } from "../../utils/icons";
+import { UserMobileIcon ,UserIcon } from "../../utils/icons";
 import { UserLogin } from "../../pages/user/UserLogin";
 import UserProfile from "../../pages/user/UserProfile";
 
@@ -96,7 +96,7 @@ export const Header = () => {
 
         <div className="flex justify-between mt-[-10px]">
           <div className="text-white mr-4 mt-[3px]">
-            <SupplierIcon />
+            <UserIcon />
           </div>
           <div >
             {user ? (
@@ -150,6 +150,27 @@ export const Header = () => {
           <span onClick={handleFadeIn}>
             <IoMdClose className="text-[20px]" />
           </span>
+        </div>
+        <div className="flex  mt-[30px]">
+          <div className=" mr-4 mt-[10px]">
+            <UserMobileIcon />
+          </div>
+          <div >
+            {user ? (
+              <Link onClick={handleProfileClick} to="#">
+              <div className=" text-[20px]">Welcome</div>
+              <div className="text-[20px]">{user?.firstName}</div>
+            </Link>
+              // <p className="text-white">Welcome, {user.firstName}</p>
+            ) : (
+              <>
+                 <Link onClick={handleSignInClick} to="#">
+                    <div className=" text-[20px]">Welcome</div>
+                    <div className="text-[20px]">SignIn / Sign up</div>
+                  </Link>
+              </>
+            )}
+          </div>
         </div>
         {/* mobile header  */}
         <div className="w-full flex mt-[80px] flex-col gap-3">

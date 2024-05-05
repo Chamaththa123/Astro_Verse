@@ -44,9 +44,9 @@ export default function UserProfile({ handleOpen, open }) {
             </div>
             <div className="text-center my-10 mb-10 gap-4">
               <h2 className="text-gray-800 font-semibold font-inter pb-2 text-lg">
-                {user.firstName} {user.lastName}
+                {user?.firstName} {user?.lastName}
               </h2>
-              <p className="text-gray-800 font-inter text-lg ">{user.email}</p>
+              <p className="text-gray-800 font-inter text-lg ">{user?.email}</p>
               <br />
               <br />
               <br />
