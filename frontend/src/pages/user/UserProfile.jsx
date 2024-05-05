@@ -6,10 +6,16 @@ import background from "../../assets/images/apod-hero/planet.jpg";
 import profile from "../../assets/images/userprofile.png";
 
 export default function UserProfile({ handleOpen, open }) {
-  const { user } = useStateContext();
+  const { user, setUser } = useStateContext();
 
   const handleClose = () => {
     handleOpen();
+  };
+
+  const handleLogout = () => {
+    // Clear user session or perform any other logout logic
+    setUser(null); // Assuming setUser is a function to update user state
+    handleClose(); // Close the dialog after logout
   };
 
   return (
@@ -47,6 +53,8 @@ export default function UserProfile({ handleOpen, open }) {
                 {user?.firstName} {user?.lastName}
               </h2>
               <p className="text-gray-800 font-inter text-lg ">{user?.email}</p>
+              <br />
+              <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Logout</button>
               <br />
               <br />
               <br />
