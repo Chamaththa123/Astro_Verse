@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import "../../assets/css/ImageLoader.css";
 import { ArrowRight } from "../../utils/icons";
+import MrpDetails from "./MrpDetails";
 
 export default function MrpCard({ data }) {
   const [imageLoading, setImageLoading] = useState(true);
 
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen((cur) => !cur);
+
+  const [selectedMRP, setSelectedMRP] = useState(null);
+
+  const handleClick = (view) => {
+    setSelectedMRP(view);
+    handleOpen();
+  };
   return (
     <>
       <div>
@@ -33,12 +43,20 @@ export default function MrpCard({ data }) {
             <div className="text-[15px]">Rover: {data.rover.name}</div>
             <div className="text-[15px]">Sol: {data.sol}</div>
           </div>
-          <button className="read-more text-[#ff1d03] font-semibold" >
-      <div className="flex">Read More &nbsp;<ArrowRight/></div>
-        
-    </button>
+          <button
+            onClick={() => handleClick(data)}
+            className="read-more text-[#ff1d03] font-semibold"
+          >
+            <div className="flex">
+              Read More &nbsp;
+              <ArrowRight />
+            </div>
+          </button>
         </div>
       </div>
+      {selectedMRP && (
+        <MrpDetails mrp={selectedMRP} handleOpen={handleOpen} open={open} />
+      )}
     </>
   );
 }

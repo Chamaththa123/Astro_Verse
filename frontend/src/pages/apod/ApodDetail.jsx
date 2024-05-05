@@ -50,7 +50,7 @@ export default function ApodDetail({ apod, handleOpen, open }) {
           Date : {apod.date}
           </div>
 
-          <div className="font-inter font-medium">
+          <div className="font-inter font-normal">
           {apod.explanation}
           </div>
         </Card>

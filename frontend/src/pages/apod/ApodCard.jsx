@@ -13,7 +13,6 @@ export default function ApodCard({ item, maxChars }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 
-
   const [selectedAPOD, setSelectedAPOD] = useState(null);
 
   const handleClick = (view) => {
@@ -49,20 +48,20 @@ export default function ApodCard({ item, maxChars }) {
           <div className="text-[15px] py-3">{item.date}</div>
           <div>{truncateText(item.explanation, maxChars)}</div>
           <div className="flex justify-end">
-    <button className="read-more text-[#ff1d03] font-semibold"  onClick={() => handleClick(item)}>
-      <div className="flex">Read More &nbsp;<ArrowRight/></div>
-        
-    </button>
-</div>
-
+            <button
+              className="read-more text-[#ff1d03] font-semibold"
+              onClick={() => handleClick(item)}
+            >
+              <div className="flex">
+                Read More &nbsp;
+                <ArrowRight />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
       {selectedAPOD && (
-        <ApodDetail
-        apod={selectedAPOD}
-          handleOpen={handleOpen}
-          open={open}
-        />
+        <ApodDetail apod={selectedAPOD} handleOpen={handleOpen} open={open} />
       )}
     </>
   );
