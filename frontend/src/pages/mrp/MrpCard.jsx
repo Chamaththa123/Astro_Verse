@@ -18,7 +18,7 @@ export default function MrpCard({ data }) {
   return (
     <>
       <div>
-        <div className="w-full">
+        <div className="w-full font-inter">
           {imageLoading && (
             <div className="dot-spinner mt-[45%] ml-[45%]">
               <div className="dot-spinner__dot"></div>

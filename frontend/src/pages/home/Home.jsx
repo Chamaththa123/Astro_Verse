@@ -25,7 +25,7 @@ export const Home = () => {
    <Header/>
     <section
       ref={ref}
-      className='overflow-hidden w-full xl:h-screen md:h-[60vh] h-[80vh] relative flex items-center justify-center font-press-start'
+      className='overflow-hidden w-full xl:h-screen md:h-[60vh] h-[80vh] relative flex items-center justify-center font-inter'
     >
       <div className='absolute top-0 left-0 w-full z-50 bg-[#0c2051]'></div>
       <video autoPlay loop muted className='w-full xl:h-screen h-[80vh] object-cover'>

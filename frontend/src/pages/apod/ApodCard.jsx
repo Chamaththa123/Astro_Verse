@@ -25,7 +25,7 @@ export default function ApodCard({ item, maxChars }) {
 
   return (
     <>
-      <div className="md:flex mt-8">
+      <div className="md:flex mt-8 font-inter">
         <div className="md:w-[30%] w-full">
         {imageLoading && (
             <div className="relative dot-spinner mt-[45%] ml-[45%]">

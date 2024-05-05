@@ -76,7 +76,7 @@ export default function Planets() {
   return (
     <section
       ref={ref}
-      className="relative w-full px-[5%] md:px-[7%] md:h-[300px] h-[200px] pt-[40px] overflow-hidden"
+      className="relative w-full font-inter px-[5%] md:px-[7%] md:h-[300px] h-[200px] pt-[40px] overflow-hidden"
       style={{ backgroundImage: `url(${hero})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
     >
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-60"></div>

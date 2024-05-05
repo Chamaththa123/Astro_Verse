@@ -44,7 +44,7 @@ export default function TodayApod() {
 
   if (!apodData || Object.keys(apodData).length === 0) {
     return (
-      <div className="px-[5%]">
+      <div className="px-[5%] font-inter">
         <Alert variant="ghost" icon={<IconSolid />}>
           <Typography className="font-medium">
             No photos available for the today.

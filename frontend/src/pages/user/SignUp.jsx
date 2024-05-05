@@ -81,7 +81,7 @@ export default function SignUp() {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-3 md:p-6 p-1 ">
+        <div className="flex flex-col gap-3 md:p-6 p-1 font-inter">
           <div className="flex w-full flex-col mb-2 mt-[-20px]">
             {successMessage && (
               <div className="bg-green-500 p-3 rounded-md text-white text-sm">

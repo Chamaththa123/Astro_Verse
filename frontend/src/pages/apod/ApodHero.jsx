@@ -77,7 +77,7 @@ export default function ApodHero() {
         className=" w-full xl:h-screen h-[80vh] object-cover"
         alt=""
       />
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
+      <div className="absolute  top-0 left-0 w-full h-full bg-gradient-to-l from-transparent to-black opacity-70"></div>
 
       <div className="absolute w-full xl:h-screen flex  flex-col">
         <div className="md:text-left text-center text-[#F2F9FF] xl:text-[55px] md:px-[5%] px-[5%] font-bold xl:leading-[5px] text-[30px] leading-[50px] md:mt-[15%] mt-0">
