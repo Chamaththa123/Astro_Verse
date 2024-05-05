@@ -35,3 +35,10 @@
 <li>npm install</li>
 <li>npm run dev</li>
 </ul>
+
+# Test
+
+## Unit Testing
+
+<p>Directory - assignment-02-Chamaththa123\frontend\test</p>
+<p>Command - npm test</p>
