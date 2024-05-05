@@ -66,7 +66,7 @@ export default function TodayApod() {
                 </h2>
                 <div className="text-gray-500 font-medium">{formattedDate}</div>
                 <div className="border-2 my-[1%]"></div>
-                <p className="mt-6 leading-8 font-medium font-inter md:block hidden">
+                <p className="mt-6 leading-8 font-normal font-inter md:block hidden">
                   {apodData.explanation}
                 </p>
                 <div className="mt-3 font-inter md:block hidden">

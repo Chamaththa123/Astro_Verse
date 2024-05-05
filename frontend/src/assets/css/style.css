@@ -158,6 +158,29 @@ body {
   transform-origin: bottom left;
 }
 
+.read-more-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.read-more-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.read-more-header:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 .glass-effect {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.5);

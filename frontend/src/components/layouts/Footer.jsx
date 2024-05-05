@@ -19,7 +19,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col md:flex-row gap-10 md:w-[25%] justify-end w-full">
           <div className=" flex flex-col gap-7 ">
-            <div className="text-left text-[#ff1d03] text-xl font-semibold leading-[50px]">
+            <div className="text-left text-[#ff352e] text-xl font-semibold leading-[50px]">
               Links
             </div>
 
@@ -28,7 +28,7 @@ export default function Footer() {
                 return (
                   <Link
                     to={item.url}
-                    className="text-white text-sm font-normal cursor-pointer read-more"
+                    className="text-white text-sm font-normal cursor-pointer read-more-header"
                     key={itemIndex}
                   >
                     {item.title}
@@ -40,27 +40,27 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-7 items-start md:w-[25%] font-inter">
-          <div className="text-left text-[#ff1d03] text-xl font-semibold leading-[50px] ">
+          <div className="text-left text-[#ff352e] text-xl font-semibold leading-[50px] ">
             Follow AstroVerse
           </div>
 
           <div className="flex tracking-[0.2px] text-[14px] text-white">
             <span className="mr-[15px]">
-              <FaInstagramSquare className=" text-[30px] text-[#ff1d03]" />
+              <FaInstagramSquare className=" text-[30px] text-[#ff352e]" />
             </span>
             <span className="mt-1 font-normal text-sm">Instagram/AstroVerse</span>
           </div>
 
           <div className="flex tracking-[0.2px] text-[14px] text-white">
             <span className="mr-[15px]">
-              <FaFacebook className=" text-[30px] text-[#ff1d03]" />
+              <FaFacebook className=" text-[30px] text-[#ff352e]" />
             </span>
             <span className="mt-1 font-normal text-sm">Facebbok/AstroVerse</span>
           </div>
 
           <div className="flex tracking-[0.1px] text-[14px] text-white">
             <span className="mr-[15px]">
-              <FaTwitter className=" text-[30px] text-[#ff1d03]" />
+              <FaTwitter className=" text-[30px] text-[#ff352e]" />
             </span>
             <span className="mt-1 font-normal text-sm">
               Twitter/AstroVerse
