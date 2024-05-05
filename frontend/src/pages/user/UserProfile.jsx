@@ -13,9 +13,7 @@ export default function UserProfile({ handleOpen, open }) {
   };
 
   const handleLogout = () => {
-    // Clear user session or perform any other logout logic
-    setUser(null); // Assuming setUser is a function to update user state
-    handleClose(); // Close the dialog after logout
+    setUser(null);
   };
 
   return (
