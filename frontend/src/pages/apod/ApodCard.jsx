@@ -3,6 +3,9 @@ import { ArrowRight } from "../../utils/icons";
 import ApodDetail from "./ApodDetail";
 
 export default function ApodCard({ item, maxChars }) {
+
+  const [imageLoading, setImageLoading] = useState(true);
+
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
       return text;
@@ -24,11 +27,24 @@ export default function ApodCard({ item, maxChars }) {
     <>
       <div className="md:flex mt-8">
         <div className="md:w-[30%] w-full">
+        {imageLoading && (
+            <div className="relative dot-spinner mt-[45%] ml-[45%]">
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+              <div className="dot-spinner__dot"></div>
+            </div>
+          )}
           {item.media_type === "image" ? (
             <img
               src={item.hdurl}
               alt={item.title}
               className="items-center justify-center w-full h-[200px] rounded-lg"
+              onLoad={() => setImageLoading(false)}
             />
           ) : item.media_type === "video" ? (
             <iframe

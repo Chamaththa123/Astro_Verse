@@ -3,7 +3,6 @@ import { Alert, Typography } from "@material-tailwind/react";
 export default function TodayApod() {
   const [apodData, setApodData] = useState(null);
   const [imageLoading, setImageLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const currentDate = new Date();
   const formattedDate = `${currentDate.getFullYear()}-${(
@@ -26,7 +25,6 @@ export default function TodayApod() {
         const data = await response.json();
         setApodData(data);
       } catch (error) {
-        setError(error.message);
         console.error("Error fetching APOD:", error);
       }
     };
@@ -44,21 +42,21 @@ export default function TodayApod() {
     }
   }, [apodData]);
 
+  if (!apodData || Object.keys(apodData).length === 0) {
+    return (
+      <div className="px-[5%]">
+        <Alert variant="ghost" icon={<IconSolid />}>
+          <Typography className="font-medium">
+            No photos available for the today.
+          </Typography>
+        </Alert>
+      </div>
+    );
+  }
+
   return (
     <section className="md:py-[1%] md:px-[7%] px-[5%] font-inter mb-6">
       <div>
-        {error && (
-          <Alert variant="ghost" icon={<IconSolid />}>
-            <Typography className="font-medium">{error}</Typography>
-          </Alert>
-        )}
-        {!apodData && !error && (
-          <Alert variant="ghost" icon={<IconSolid />}>
-            <Typography className="font-medium">
-              Ensure that these requirements are met:
-            </Typography>
-          </Alert>
-        )}
         {apodData && (
           <div>
             <div className="md:flex">
@@ -79,7 +77,18 @@ export default function TodayApod() {
                 {apodData.media_type === "image" ? (
                   <div className="float-right md:w-[85%] w-full mt-4 ">
                     {imageLoading ? (
-                      <div>Loading...</div>
+                      <div>
+                        <div className="dot-spinner mt-[45%] ml-[45%]">
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                          <div className="dot-spinner__dot"></div>
+                        </div>
+                      </div>
                     ) : (
                       <img
                         src={apodData.hdurl}
