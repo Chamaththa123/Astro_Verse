@@ -13,7 +13,7 @@
 <p><b>1. Technology Stack</b></p><br>
 <p>Frontend: React (with functional components)</p>
 <p>CSS Framework: Tailwind CSS</p>
-<p>Backend: REST API for user management. (For login use below credentials or you can signup)</p>
+<p>Backend: REST API for user management. (Backend was deployed.We can access deployed frontend accessing sign up and sign in)</p>
 <br>
 
 <p><b>2. API Integration:</b></p><br>
